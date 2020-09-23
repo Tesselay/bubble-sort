@@ -19,7 +19,7 @@ if __name__ == '__main__':
     takeout = list.pop(smallest_index)
     list.append(takeout)
 
-    while find_greatest_index(list) != len(list) - 1:
+    while find_smallest_index(list) != 0 or find_greatest_index(list) != len(list) - 1:
         try:
             if list[iterator] > list[iterator+1]:
                 takeout = list.pop(iterator)
