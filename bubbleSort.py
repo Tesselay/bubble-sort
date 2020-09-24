@@ -15,6 +15,8 @@ def iteration(numbers, iterator):
     except IndexError:
         iterator = 0
 
+    return numbers, iterator
+
 
 def bubble_sort(numbers):
     iterator: int = 0
@@ -23,7 +25,7 @@ def bubble_sort(numbers):
     takeout = numbers.pop(smallest_index)
     numbers.append(takeout)
 
-    while find_smallest_index(list) != 0:
-        iteration(numbers, iterator)
+    while find_smallest_index(numbers) != 0:
+        numbers, iterator = iteration(numbers, iterator)
 
     return numbers
