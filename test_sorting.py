@@ -17,12 +17,18 @@ class TestSorting(unittest.TestCase):
         sorted_numbers = [-12, -11, -7, -3, -1, 2, 4, 5, 7, 9]
         self.assertEqual(numbers, sorted_numbers, "Should be of same order")
 
-
     def test_duplicates_list(self):
         numbers = [7, 3, 4, 7, 9, 3, 4, 9, 4, 1]
         numbers = bubbleSort.bubble_sort(numbers)
 
         sorted_numbers = [1, 3, 3, 4, 4, 4, 7, 7, 9, 9]
+        self.assertEqual(numbers, sorted_numbers, "Should be of same order")
+
+    def test_float_list(self):
+        numbers = [2, 3.6, 7, 4.1, 9, 12, 12.01, -1.2, 5.0000451]
+        numbers = bubbleSort.bubble_sort(numbers)
+
+        sorted_numbers = [-1.2, 2, 3.6, 4.1, 5.0000451, 7, 9, 12, 12.01]
         self.assertEqual(numbers, sorted_numbers, "Should be of same order")
 
 
