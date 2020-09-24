@@ -1,8 +1,3 @@
-def find_greatest_index(numbers):
-    greatest_val: int = max(numbers)
-    return numbers.index(greatest_val)
-
-
 def find_smallest_index(numbers):
     smallest_val: int = min(numbers)
     return numbers.index(smallest_val)
