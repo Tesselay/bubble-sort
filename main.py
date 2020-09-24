@@ -1,5 +1,3 @@
-
-
 def find_greatest_index(numbers):
     greatest_val: int = max(numbers)
     return numbers.index(greatest_val)
@@ -11,7 +9,7 @@ def find_smallest_index(numbers):
 
 
 if __name__ == '__main__':
-    list = [2,5,1,3]
+    list = [2,5,1,3,7,9,12,15,21,13,4, 16, 92, -2, 3]
 
     iterator = 0
 
@@ -19,11 +17,13 @@ if __name__ == '__main__':
     takeout = list.pop(smallest_index)
     list.append(takeout)
 
-    while find_smallest_index(list) != 0 or find_greatest_index(list) != len(list) - 1:
+    while find_smallest_index(list) != 0:
         try:
             if list[iterator] > list[iterator+1]:
-                takeout = list.pop(iterator)
-                list.append(takeout)
+                first_val = list[iterator]
+                second_val = list[iterator+1]
+                list[iterator] = second_val
+                list[iterator+1] = first_val
             else:
                 iterator += 1
         except IndexError:
