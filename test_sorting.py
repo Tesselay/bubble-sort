@@ -18,5 +18,13 @@ class TestSorting(unittest.TestCase):
         self.assertEqual(numbers, sorted_numbers, "Should be of same order")
 
 
+    def test_duplicates_list(self):
+        numbers = [7, 3, 4, 7, 9, 3, 4, 9, 4, 1]
+        numbers = bubbleSort.bubble_sort(numbers)
+
+        sorted_numbers = [1, 3, 3, 4, 4, 4, 7, 7, 9, 9]
+        self.assertEqual(numbers, sorted_numbers, "Should be of same order")
+
+
 if __name__ == '__main__':
     unittest.main()
