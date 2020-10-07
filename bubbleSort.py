@@ -19,6 +19,7 @@ def iteration(numbers, iterator):
             second_val = numbers[iterator + 1]
             numbers[iterator] = second_val
             numbers[iterator + 1] = first_val
+            iterator += 1
         else:
             NUMBER_COMPARED += 1
             iterator += 1
@@ -47,5 +48,7 @@ def bubble_sort(numbers):
     global NUMBER_SWITCHED
     print("Numbers compared: {}".format(NUMBER_COMPARED))
     print("Numbers switched: {}".format(NUMBER_SWITCHED))
+    NUMBER_COMPARED = 0
+    NUMBER_SWITCHED = 0
 
     return numbers
