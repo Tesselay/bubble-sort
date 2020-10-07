@@ -1,3 +1,7 @@
+NUMBER_COMPARED = 0
+NUMBER_SWITCHED = 0
+
+
 def find_smallest_index(numbers):
     smallest_val: int = min(numbers)
     return numbers.index(smallest_val)
@@ -5,12 +9,18 @@ def find_smallest_index(numbers):
 
 def iteration(numbers, iterator):
     try:
+        global NUMBER_COMPARED
+        global NUMBER_SWITCHED
         if numbers[iterator] > numbers[iterator + 1]:
+            NUMBER_COMPARED += 1
+            NUMBER_SWITCHED += 1
+
             first_val = numbers[iterator]
             second_val = numbers[iterator + 1]
             numbers[iterator] = second_val
             numbers[iterator + 1] = first_val
         else:
+            NUMBER_COMPARED += 1
             iterator += 1
     except IndexError:
         iterator = 0
@@ -32,5 +42,10 @@ def bubble_sort(numbers):
 
     while find_smallest_index(numbers) != 0:
         numbers, iterator = iteration(numbers, iterator)
+
+    global NUMBER_COMPARED
+    global NUMBER_SWITCHED
+    print("Numbers compared: {}".format(NUMBER_COMPARED))
+    print("Numbers switched: {}".format(NUMBER_SWITCHED))
 
     return numbers
